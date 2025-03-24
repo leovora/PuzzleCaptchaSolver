@@ -7,7 +7,7 @@ import re
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from scripts.mouse_mover import MouseMover
+from mouse_mover import MouseMover
 from ultralytics import YOLO
 
 class CaptchaSolverBot:
@@ -107,7 +107,7 @@ class CaptchaSolverBot:
 
             if use_rl:
                 print("Utilizzando movimento con Reinforcement Learning...")
-                self.mouse_mover.move_slider_with_rl(result, True)
+                self.mouse_mover.move_slider_with_rl(result, False)
             else:
                 print("Utilizzando movimento base...")
                 self.mouse_mover.move_slider(result, True)
