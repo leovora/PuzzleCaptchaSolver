@@ -15,19 +15,19 @@ Con l'avanzamento dell'intelligenza artificiale, i CAPTCHA tradizionali sono div
 ```
 /data:
   /processed → Contiene le immagini processate dagli script
-mouse_movement_model.zip → Modello allenato per il movimento del mouse
-multi_cls.onnx → Modello YOLO allenato per l’analisi delle immagini
+  mouse_movement_model.zip → Modello allenato per il movimento del mouse
+  multi_cls.onnx → Modello YOLO allenato per l’analisi delle immagini
 /src:
   /scripts:
     mouse_mover.py → Script con la classe per i movimenti del mouse
     template_matching.py → Script per la risoluzione del CAPTCHA con template matching
     yolo.py → Script per la risoluzione del CAPTCHA con YOLO
-/notebooks:
-  mouseRL.ipynb → Notebook per la creazione del modello mouse_movement_model.zip
+  /notebooks:
+    mouseRL.ipynb → Notebook per la creazione del modello mouse_movement_model.zip
 /tests:
   demo.py → Script che testa tutte le combinazioni per la risoluzione del CAPTCHA
 /docs:
-  report.docx → Report del progetto
+  Report.pdf → Report del progetto
 ```
 
 ## Istruzioni per l'uso
