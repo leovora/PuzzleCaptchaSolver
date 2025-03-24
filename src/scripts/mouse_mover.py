@@ -10,32 +10,31 @@ class MouseMover:
         self.driver = driver
         self.model = PPO.load("data/mouse_movement_model.zip")
 
-    def move_slider_tm(self, distance):
+        
+    def move_slider(self, distance, correction):
         """
         Muove il cursore sulla barra del captcha con un movimento lineare.
         """
+        
+        if(correction):
+            distance = distance - 15
+        
         slider = self.driver.find_element(By.CLASS_NAME, "geetest_btn")
         actions = ActionChains(self.driver)
         actions.click_and_hold(slider).pause(0.2)
         actions.move_by_offset(distance, 0)
         actions.release().perform()
-        
-    def move_slider_yolo(self, distance):
-        """
-        Muove il cursore sulla barra del captcha con un movimento lineare.
-        """
-        slider = self.driver.find_element(By.CLASS_NAME, "geetest_btn")
-        actions = ActionChains(self.driver)
-        actions.click_and_hold(slider).pause(0.2)
-        actions.move_by_offset(distance - 15, 0)
-        actions.release().perform()
 
-    def move_slider_with_rl(self, distance):
+    def move_slider_with_rl(self, distance, correction):
         """
         Muove il cursore utilizzando un modello RL per un movimento più naturale.
         """
+    
         if self.model is None:
             raise ValueError("Modello RL non caricato.")
+        
+        if(correction):
+            distance = distance - 15
 
         slider = self.driver.find_element(By.CLASS_NAME, "geetest_btn")
         actions = ActionChains(self.driver)

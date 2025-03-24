@@ -158,13 +158,13 @@ class CaptchaSolverBot:
 
             if use_rl:
                 print("Utilizzando movimento con Reinforcement Learning...")
-                self.mouse_mover.move_slider_with_rl(result)
+                self.mouse_mover.move_slider_with_rl(result, False)
             else:
                 print("Utilizzando movimento base...")
-                self.mouse_mover.move_slider_yolo(result)
+                self.mouse_mover.move_slider(result, False)
 
             sleep(2)
-            self.driver.quit
+            self.driver.quit()
         else:
             print("Errore: non è stata rilevata alcuna posizione valida per il captcha.")
 
