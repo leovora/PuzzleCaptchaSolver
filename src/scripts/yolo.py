@@ -7,7 +7,7 @@ import re
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-from mouse_mover import MouseMover
+from scripts.mouse_mover import MouseMover
 from ultralytics import YOLO
 
 class CaptchaSolverBot:
